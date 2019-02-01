@@ -1,16 +1,37 @@
 # Kofax-Export-Script-Guide
 
-## Development Environment
+## <a name=Content></a> Table of Contents
+1. [Development Environment](#DevEnv)
+2. [Project Settings](#Settings)  
+  2.1. [Project Type](#ProjectType)  
+  2.2. [Framework](#Framework)  
+  2.3. [COM (Component Object Model)](#COM)  
+  2.4. [Target Platform](#Target)  
+  2.5. [Build](#Build)  
+  2.6. [Debugging](#Debugging)  
+    &emsp;&ensp;&nbsp;2.6.1. [Debug Information](#DebugInfo)  
+    &emsp;&ensp;&nbsp;2.6.2. [Local Tests](#Tests)  
+  2.7. [Dependencies](#Dependencies)  
+  2.8. [Registration](#Registration)  
+  2.9. [Setup Script](#SetupScript)  
+    &emsp;&ensp;&nbsp;2.9.1. [Interface](#Interface)  
+    &emsp;&ensp;&nbsp;2.9.1. [Setup Form](#SetupForm)  
+  2.10. [Release Script](#ReleaseScript)  
+  2.11. [Register the project on the machine](#ProjectRegistration)  
+  2.12. [Install the Script](#Installation)
+3. [Rollout](#Rollout)  
+
+## <a name=DevEnv></a> Development Environment
 
 The guide relies on **Visual Studio**
 
-## Project Settings
+## <a name=Settings></a> Project Settings
 
-### Project Type
+### <a name=ProjectType></a> Project Type
 
 .NET class library
 
-### Framework
+### <a name=Framework></a> Framework
 
 .NET 4.0 Framework
 
@@ -18,7 +39,7 @@ The guide relies on **Visual Studio**
 => Application => Target framwork
 ```
 
-### COM (Component Object Model)
+### <a name=COM></a> COM (Component Object Model)
 
 In order for the interfaces to communicate with Kofax, COM visibility must be enabled
 
@@ -26,7 +47,7 @@ In order for the interfaces to communicate with Kofax, COM visibility must be en
 => Application => Assembly Information => Make assembly COM-Visible
 ```
 
-### Target Platform
+### <a name=Target></a> Target Platform
 
 As a 32-bit application, the target platform is x86
 
@@ -34,7 +55,7 @@ As a 32-bit application, the target platform is x86
 => Build => Platform target
 ```
 
-### Build
+### <a name=Build></a> Build
 
 The files required for Kofax must be stored in the Bin directory of Kofax. This can be found at
 
@@ -48,9 +69,9 @@ In order to optimize the development, the output path of the . dll file can be s
 => Build => Output path
 ```
 
-### Debugging
+### <a name=Debugging></a> Debugging
 
-#### Debug Information
+#### <a name=DebugInfo></a> Debug Information
 
 To get complete debug information, the option must be specified
 
@@ -58,7 +79,7 @@ To get complete debug information, the option must be specified
 => Build => Advanced => Debugging information
 ```
 
-#### Local Tests
+#### <a name=Tests></a> Local Tests
 
 An external program can be started to debug the respective script
 
@@ -78,7 +99,7 @@ The path can be defined under
 => Debug => Start external program
 ```
 
-### Dependencies
+### <a name=Dependencies></a> Dependencies
 
 The **Kofax.ReleaseLib.Interop.dll** must be included in the references
 
@@ -86,27 +107,27 @@ The **Kofax.ReleaseLib.Interop.dll** must be included in the references
 => References => Add Reference => Browse => C:\Program Files (x86)\Kofax\CaptureSS\ServLib\Bin\Kofax.ReleaseLib.Interop.dll
 ```
 
-### Registration
+### <a name=Registration></a> Registration
 
 A [.inf file](https://github.com/matthiashermsen/Kofax-Export-Script-Guide/blob/master/src/LeeresExportScript.inf) is required to install the script. This is then stored in the Kofax Bin directory
 
 **The file must not be created in the UTF-8 format, but must use the UTF-8 without BOM Fortmat**
 
-### Setup Script
+### <a name=SetupScript></a> Setup Script
 
-#### Interface
+#### <a name=Interface></a> Interface
 
 The [setup script](https://github.com/matthiashermsen/Kofax-Export-Script-Guide/blob/master/src/KfxReleaseScriptSetup.cs) is used by the administration module
 
-#### Setup Form
+#### <a name=SetupForm></a> Setup Form
 
 The setup script starts a [form](https://github.com/matthiashermsen/Kofax-Export-Script-Guide/blob/master/src/FrmSetup.cs)
 
-### Release Script
+### <a name=ReleaseScript></a> Release Script
 
 The [release script](https://github.com/matthiashermsen/Kofax-Export-Script-Guide/blob/master/src/KfxReleaseScript.cs) is executed during the export
 
-### Register the project on the machine
+### <a name=ProjectRegistration></a> Register the project on the machine
 
 To register the project locally, RegAsm must be run once as administrator in the console
 
@@ -114,7 +135,7 @@ To register the project locally, RegAsm must be run once as administrator in the
 "C:\Windows\Microsoft.NET\Framework\v4.0.30319\RegAsm.exe" LeeresExportScript.dll /codebase /tlb:LeeresExportScript.tlb
 ```
 
-### Install the Script
+### <a name=Installation></a> Install the Script
 
 The script can be installed via the administration module
 
@@ -122,6 +143,6 @@ The script can be installed via the administration module
 Extras Tab => Export Scripte => Hinzufügen => .inf Datei im Kofax Bin Verzeichnis
 ```
 
-## Rollout
+## <a name=Rollout></a> Rollout
 
 To deliver the script to the customer, the project . dll and . inf file must be placed in the customer's Kofax Bin directory
