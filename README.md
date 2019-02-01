@@ -21,17 +21,17 @@
   2.12. [Install the Script](#Installation)
 3. [Rollout](#Rollout)  
 
-## <a name=DevEnv></a> Development Environment
+## <a name=DevEnv></a> 1. Development Environment
 
 The guide relies on **Visual Studio**
 
-## <a name=Settings></a> Project Settings
+## <a name=Settings></a> 2. Project Settings
 
-### <a name=ProjectType></a> Project Type
+### <a name=ProjectType></a> 2.1 Project Type
 
 .NET class library
 
-### <a name=Framework></a> Framework
+### <a name=Framework></a> 2.2 Framework
 
 .NET 4.0 Framework
 
@@ -39,7 +39,7 @@ The guide relies on **Visual Studio**
 => Application => Target framwork
 ```
 
-### <a name=COM></a> COM (Component Object Model)
+### <a name=COM></a> 2.3 COM (Component Object Model)
 
 In order for the interfaces to communicate with Kofax, COM visibility must be enabled
 
@@ -47,7 +47,7 @@ In order for the interfaces to communicate with Kofax, COM visibility must be en
 => Application => Assembly Information => Make assembly COM-Visible
 ```
 
-### <a name=Target></a> Target Platform
+### <a name=Target></a> 2.4 Target Platform
 
 As a 32-bit application, the target platform is x86
 
@@ -55,7 +55,7 @@ As a 32-bit application, the target platform is x86
 => Build => Platform target
 ```
 
-### <a name=Build></a> Build
+### <a name=Build></a> 2.5 Build
 
 The files required for Kofax must be stored in the Bin directory of Kofax. This can be found at
 
@@ -69,9 +69,9 @@ In order to optimize the development, the output path of the . dll file can be s
 => Build => Output path
 ```
 
-### <a name=Debugging></a> Debugging
+### <a name=Debugging></a> 2.6 Debugging
 
-#### <a name=DebugInfo></a> Debug Information
+#### <a name=DebugInfo></a> 2.6.1 Debug Information
 
 To get complete debug information, the option must be specified
 
@@ -79,7 +79,7 @@ To get complete debug information, the option must be specified
 => Build => Advanced => Debugging information
 ```
 
-#### <a name=Tests></a> Local Tests
+#### <a name=Tests></a> 2.6.2 Local Tests
 
 An external program can be started to debug the respective script
 
@@ -99,7 +99,7 @@ The path can be defined under
 => Debug => Start external program
 ```
 
-### <a name=Dependencies></a> Dependencies
+### <a name=Dependencies></a> 2.7 Dependencies
 
 The **Kofax.ReleaseLib.Interop.dll** must be included in the references
 
@@ -107,27 +107,27 @@ The **Kofax.ReleaseLib.Interop.dll** must be included in the references
 => References => Add Reference => Browse => C:\Program Files (x86)\Kofax\CaptureSS\ServLib\Bin\Kofax.ReleaseLib.Interop.dll
 ```
 
-### <a name=Registration></a> Registration
+### <a name=Registration></a> 2.8 Registration
 
 A [.inf file](https://github.com/matthiashermsen/Kofax-Export-Script-Guide/blob/master/src/LeeresExportScript.inf) is required to install the script. This is then stored in the Kofax Bin directory
 
 **The file must not be created in the UTF-8 format, but must use the UTF-8 without BOM Fortmat**
 
-### <a name=SetupScript></a> Setup Script
+### <a name=SetupScript></a> 2.9 Setup Script
 
-#### <a name=Interface></a> Interface
+#### <a name=Interface></a> 2.9.1. Interface
 
 The [setup script](https://github.com/matthiashermsen/Kofax-Export-Script-Guide/blob/master/src/KfxReleaseScriptSetup.cs) is used by the administration module
 
-#### <a name=SetupForm></a> Setup Form
+#### <a name=SetupForm></a> 2.9.2 Setup Form
 
 The setup script starts a [form](https://github.com/matthiashermsen/Kofax-Export-Script-Guide/blob/master/src/FrmSetup.cs)
 
-### <a name=ReleaseScript></a> Release Script
+### <a name=ReleaseScript></a> 2.10. Release Script
 
 The [release script](https://github.com/matthiashermsen/Kofax-Export-Script-Guide/blob/master/src/KfxReleaseScript.cs) is executed during the export
 
-### <a name=ProjectRegistration></a> Register the project on the machine
+### <a name=ProjectRegistration></a> 2.11. Register the project on the machine
 
 To register the project locally, RegAsm must be run once as administrator in the console
 
@@ -135,7 +135,7 @@ To register the project locally, RegAsm must be run once as administrator in the
 "C:\Windows\Microsoft.NET\Framework\v4.0.30319\RegAsm.exe" LeeresExportScript.dll /codebase /tlb:LeeresExportScript.tlb
 ```
 
-### <a name=Installation></a> Install the Script
+### <a name=Installation></a> 2.12. Install the Script
 
 The script can be installed via the administration module
 
@@ -143,6 +143,6 @@ The script can be installed via the administration module
 Extras Tab => Export Scripte => Hinzufügen => .inf Datei im Kofax Bin Verzeichnis
 ```
 
-## <a name=Rollout></a> Rollout
+## <a name=Rollout></a> 3. Rollout
 
 To deliver the script to the customer, the project . dll and . inf file must be placed in the customer's Kofax Bin directory
