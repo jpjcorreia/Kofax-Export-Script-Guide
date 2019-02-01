@@ -1,0 +1,18 @@
+[Scripts]
+LeeresExportScript
+
+[LeeresExportScript]
+SetupModule=LeeresExportScript.dll
+SetupProgID=LeeresExportScript.Setup
+SetupVersion=1.0.0
+ReleaseModule=LeeresExportScript.dll
+ReleaseProgID=LeeresExportScript.Release
+ReleaseVersion=1.0.0
+SupportsNonImageFiles=True
+SupportsKofaxPDF=True
+RemainLoaded=True
+SupportsOriginalFileName=False
+SupportsMultipleInstances=True
+SupportsCustomEncryption=False
+PathSubstitution=ASCII File Name
+DisplayName=Leeres Export Script
