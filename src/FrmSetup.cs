@@ -67,20 +67,28 @@ namespace LeeresExportScript
             // releaseSetupData.CustomProperties.Add("key", "value");
 
             releaseSetupData.Links.RemoveAll();
-
-            foreach (IndexField indexField in releaseSetupData.IndexFields)
+            
+            try
             {
-                releaseSetupData.Links.Add(indexField.Name, KfxLinkSourceType.KFX_REL_INDEXFIELD, indexField.Name);
+                foreach (IndexField indexField in releaseSetupData.IndexFields)
+                {
+                    releaseSetupData.Links.Add(indexField.Name, KfxLinkSourceType.KFX_REL_INDEXFIELD, indexField.Name);
+                }
+
+                foreach (BatchField batchField in releaseSetupData.BatchFields)
+                {
+                    releaseSetupData.Links.Add(batchField.Name, KfxLinkSourceType.KFX_REL_BATCHFIELD, batchField.Name);
+                }
+
+                foreach (dynamic batchVariable in releaseSetupData.BatchVariableNames)
+                {
+                    releaseSetupData.Links.Add(batchVariable, KfxLinkSourceType.KFX_REL_VARIABLE, batchVariable);
+                }
             }
-
-            foreach (BatchField batchField in releaseSetupData.BatchFields)
+            catch (Exception e)
             {
-                releaseSetupData.Links.Add(batchField.Name, KfxLinkSourceType.KFX_REL_BATCHFIELD, batchField.Name);
-            }
-
-            foreach (dynamic batchVariable in releaseSetupData.BatchVariableNames)
-            {
-                releaseSetupData.Links.Add(batchVariable, KfxLinkSourceType.KFX_REL_VARIABLE, batchVariable);
+                // duplicate key exception
+                throw;
             }
         }
 
