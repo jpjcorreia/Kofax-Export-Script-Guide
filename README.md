@@ -140,7 +140,7 @@ To register the project locally, RegAsm must be run once as administrator in the
 The script can be installed via the administration module
 
 ```
-Extras Tab => Export Scripte => Hinzufügen => .inf Datei im Kofax Bin Verzeichnis
+Extras Tab => Export Scripts => Add => .inf File from the Kofax Bin Directory
 ```
 
 ## <a name=Rollout></a> 3. Rollout
