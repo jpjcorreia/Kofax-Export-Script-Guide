@@ -106,6 +106,7 @@ The **Kofax.ReleaseLib.Interop.dll** must be included in the references
 ```
 => References => Add Reference => Browse => C:\Program Files (x86)\Kofax\CaptureSS\ServLib\Bin\Kofax.ReleaseLib.Interop.dll
 ```
+**Please make sure that each Kofax related dependency is set to "copy local" = false**
 
 ### <a name=Registration></a> 2.8 Registration
 
