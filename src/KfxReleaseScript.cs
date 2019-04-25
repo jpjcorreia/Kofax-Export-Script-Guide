@@ -35,7 +35,7 @@ namespace LeeresExportScript
             }
             catch (Exception e)
             {
-                documentData.LogError(e.ToString());
+                documentData.LogError(0, 0, 0, e.ToString(), "Kofax Capture Custom Export Connector", 0);
                 return KfxReturnValue.KFX_REL_ERROR;
             }
         }
@@ -52,7 +52,7 @@ namespace LeeresExportScript
             }
             catch (Exception e)
             {
-                documentData.LogError(e.ToString());
+                documentData.LogError(0, 0, 0, e.ToString(), "Kofax Capture Custom Export Connector", 0);
                 return KfxReturnValue.KFX_REL_ERROR;
             }
         }
@@ -72,7 +72,7 @@ namespace LeeresExportScript
             }
             catch (Exception e)
             {
-                documentData.LogError(e.ToString());
+                documentData.LogError(0, 0, 0, e.ToString(), "Kofax Capture Custom Export Connector", 0);
                 return KfxReturnValue.KFX_REL_ERROR;
             }
         }
