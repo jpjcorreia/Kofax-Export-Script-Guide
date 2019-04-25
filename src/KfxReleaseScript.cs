@@ -48,6 +48,33 @@ namespace LeeresExportScript
         {
             try
             {
+                foreach (IValue val in documentData.Values)
+                {
+                    if (val.TableName.IsEmpty())
+                    {
+                        string sourceName = val.SourceName;
+                        string sourceValue = val.Value;
+
+                        switch (val.SourceType)
+                        {
+                            case KfxLinkSourceType.KFX_REL_INDEXFIELD:
+                                // sourceName is the field key
+                                // sourceValue is the field value
+                                break;
+
+                            case KfxLinkSourceType.KFX_REL_VARIABLE:
+                                // sourceName is the field key
+                                // sourceValue is the field value
+                                break;
+
+                            case KfxLinkSourceType.KFX_REL_BATCHFIELD:
+                                // sourceName is the field key
+                                // sourceValue is the field value
+                                break;
+                        }
+                    }
+                }
+                
                 return KfxReturnValue.KFX_REL_SUCCESS;
             }
             catch (Exception e)
