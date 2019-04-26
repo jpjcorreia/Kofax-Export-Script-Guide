@@ -15,7 +15,7 @@
   2.8. [Registration](#Registration)  
   2.9. [Setup Script](#SetupScript)  
     &emsp;&ensp;&nbsp;2.9.1. [Interface](#Interface)  
-    &emsp;&ensp;&nbsp;2.9.1. [Setup Form](#SetupForm)  
+    &emsp;&ensp;&nbsp;2.9.2. [Setup Form](#SetupForm)  
   2.10. [Release Script](#ReleaseScript)  
   2.11. [Register the project on the machine](#ProjectRegistration)  
   2.12. [Install the Script](#Installation)
